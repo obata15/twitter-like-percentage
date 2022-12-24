@@ -1,16 +1,20 @@
 function replaceViewCount (article) {
   const analytics = article.querySelector('a[href$="analytics"]');
-  const viewCount = analytics.ariaLabel?.match(/^\d+/)?.[0];
+  const viewCount = analytics?.ariaLabel?.match(/^\d+/)?.[0];
 
-  const like = article.querySelector('[data-testid="like"]');
-  const likeCount = like.ariaLabel?.match(/^\d+/)?.[0];
-
-  const ppm = Math.round(likeCount * 10000 / viewCount);
-
-  const analyticsValueSpan = analytics.querySelector("div > div > span > span");
-
-  if (!isNaN(ppm)) {
-    analyticsValueSpan.innerText =  ppm + " ppm";
+  if (viewCount) {
+    const like = article.querySelector('[data-testid="like"]');
+    const likeCount = like?.ariaLabel?.match(/^\d+/)?.[0];
+  
+    const ppm = Math.round(likeCount * 10000 / viewCount);
+  
+    console.log(ppm, likeCount, viewCount);
+  
+    const analyticsValueSpan = analytics.querySelector("div > div > span > span");
+  
+    if (!isNaN(ppm)) {
+      analyticsValueSpan.innerText =  ppm + " ppm";
+    }
   }
 }
 
