@@ -3,7 +3,7 @@
   "name": "Twitter Like Percentage",
   "version": "0.0.1",
 
-  "description": "Show Twitter Like percentage Chrome extension",
+  "description": "Show Like percentage (instead of View Count)",
 
   "content_scripts": [
     {
