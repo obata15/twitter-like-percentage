@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Like Percentage",
+  "version": "0.0.1",
+
+  "description": "Show Twitter Like percentage Chrome extension",
+
+  "content_scripts": [
+    {
+      "matches" : ["https://twitter.com/*"],
+      "js" : ["content-script.js"]
+    }
+  ]
+}
