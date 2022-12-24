@@ -8,10 +8,8 @@ function replaceViewCount (article) {
   
     const ppm = Math.round(likeCount * 10000 / viewCount);
   
-    console.log(ppm, likeCount, viewCount);
-  
     const analyticsValueSpan = analytics.querySelector("div > div > span > span");
-  
+
     if (!isNaN(ppm)) {
       analyticsValueSpan.innerText =  ppm + " ppm";
     }
